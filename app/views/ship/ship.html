@@ -1,9 +1,8 @@
-<h3>{{shipData.name}}</h3>
-<h4> Details </h4>
-<!-- Here we are repeating over all the data for the ship this will let us.
-    (key, value) is the way to loop over an object instead of an array with
-    ng-repeat.  -->
-
-<div ng-repeat="(key, value) in shipData">
-  {{key}}: {{value}}
+<h1>{{ ship.name }}</h1>
+<div>{{ ship.cost_in_credits | currency}}</div>
+<div ng-repeat="(property, value) in ship">
+  {{ property | uppercase }} : {{ value }}
+</div>
+<div class="errorMessage" ng-show="errorMessage">
+  {{ errorMessage }}
 </div>

@@ -1,41 +1,22 @@
 <!DOCTYPE html>
 <html ng-app="starships">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <!-- Anything we put outside the ui-view will be used in all routes.
-          This is often used for headers/footers that should be shared among all
-          views. -->
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
     <nav>
-      <!-- ui-sref  is the ui-router version of a link.  We tell it the name of the
-            state that we want to go to.  -->
       <a ui-sref="home">Home</a>
-      <a ui-sref="ships">Ship List</a>
-      <!-- If you need to supply a parameter to a route, pass in an object
-            with properties of the name of the parameter.  In this case this links
-            us to ship 9's page. -->
-      <a ui-sref="ship({id:9})">Ship 9</a>
+      <a ui-sref="ships">Ships</a>
+      <a ui-sref="ship({id:9})">Death Star</a>
     </nav>
-    <ui-view>
-      <!--  Anything we put inside the ui-view will be replaced when the route loads.  -->
-      <!-- This can be a good place to throw a loading screen if your app has a longish load time -->
-      We can put a message here that will stay until it loads.
-      <img src="https://docpop.org/wp-content/uploads/2015/06/IMG_0409.png" alt="Loading Image" />
-    </ui-view>
-    <!--  Loading the angular files from a CDN so if the user already has this version of angular installed, it
-          won't have to download again. -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
-    <!--  Loading the angular router cdn. -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" charset="utf-8"></script>
+    <ui-view></ui-view>
 
-    <!-- Loading our js files that we are using. -->
-    <script src="app/app.js" charset="utf-8"></script>
-    <!-- Loading our controller js files that we are using. -->
-    <script src="app/views/ships/shipsCtrl.js" charset="utf-8"></script>
-    <script src="app/views/ship/shipCtrl.js" charset="utf-8"></script>
-    <!-- Loading our service js file -->
-    <script src="app/services/shipSrvc.js" charset="utf-8"></script>
-  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" charset="utf-8"></script> 
+    <script src="app/app.js"></script>   
+    <script src="app/views/ships/shipsCtrl.js"></script>
+    <script src="app/services/shipSrvc.js"></script>
+    <script src="app/views/ship/shipCtrl.js"></script>
+</body>
 </html>

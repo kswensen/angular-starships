@@ -1,15 +1,8 @@
-<!-- HTML template to display a list of ships -->
-
-<h3>Starship List</h3>
-<!-- Here we are repeating for each of the ships in the array. -->
-<div ng-repeat="ship in ships">
-  <!-- the ui-sref is sending us to the ship route, notice how we pass the id
-        of the ship in as an object with an id property.  This will specify the
-        route parameter. -->
-  <h3><a ui-sref="ship({id:ship.id})"> {{ship.name}}</a> -- {{ship.id}}</h3>
-    <div class="stats">
-      <div class="stat">Cost: {{ship.cost_in_credits | currency}}</div>
-      <div class="stat">Crew Size: {{ship.crew}}</div>
-      <div class="stat">Hrperdrive Rating: {{ship.hyperdrive_rating}}</div>
-    </div>
+<div>
+  <h1>Our Fine Ships</h1>
+  <div ng-repeat="ship in ships">
+    <h3><a ui-sref="ship({ id: ship.id })">{{ ship.name }} -- {{ ship.id }}</a></h3>
+    <div>Model: {{ ship.model }}</div>
+    <div>Price: {{ ship.cost_in_credits | currency }}</div>
+  </div>
 </div>
